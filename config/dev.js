@@ -19,10 +19,11 @@ export default {
     globals(),
     replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
     resolve({
-      browser: true,
-      main: true
+      customResolveOptions: {
+        moduleDirectory: 'node_modules'
+      }
     })
   ],
-  external: ['React'],
+  external: ['react'],
   sourceMap: true
 };
