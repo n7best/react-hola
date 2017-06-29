@@ -5,7 +5,7 @@ import replace from 'rollup-plugin-replace';
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-  dest: 'lib/index.dev.js',
+  dest: 'lib/index.js',
   entry: 'src/index.js',
   format: 'cjs',
   moduleName: 'react-hola',
@@ -24,6 +24,5 @@ export default {
       }
     })
   ],
-  external: ['react'],
-  sourceMap: true
+  external: ['react', 'prop-types']
 };
