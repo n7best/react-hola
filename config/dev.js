@@ -23,5 +23,6 @@ export default {
       main: true
     })
   ],
+  external: ['react'],
   sourceMap: true
 };
