@@ -4,7 +4,7 @@
   "description": "simple translation react component",
   "main": "lib/index.js",
   "scripts": {
-    "start": "rollup -c config/dev.js -w",
+    "build": "rollup -c config/build.js",
     "test": "npm run lint",
     "lint": "eslint ./src"
   },
