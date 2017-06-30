@@ -43,3 +43,81 @@ const App = () => (
   </InternationalProvider>
 );
 ```
+
+#### Component level translations
+
+```javascript
+import React from 'react';
+import { InternationalProvider, WithTranslation } from 'react-hola';
+
+//define language
+const languagesData = {
+  "en-US": {
+    "main": {
+      "helloWorld": {
+        "title": "hello world",
+        "greet": "hello {{ name }}"
+      }
+    }
+  }
+}
+
+//define a custom component
+const helloWorld = props => (
+  <div>
+    <h2>{ props.langs.title }</h2>
+    <p>{ props.langs.greet({ name: 'charlie'})}</p>
+  </div>
+)
+
+//access component translation using dot notation
+const HelloWorld = WithTranslation(helloWorld, 'main.helloWorld')
+
+//will output hello world and hello charlie
+const App = () => (
+  <InternationalProvider data={languagesData} locale="en-US">
+    <HelloWorld />
+  </InternationalProvider>
+);
+```
+
+#### Share translation among component
+
+```javascript
+import React from 'react';
+import { InternationalProvider, WithTranslation } from 'react-hola';
+
+//define language
+const languagesData = {
+  "en-US": {
+    "share": {
+      "UI": {
+        "title": "hello world"
+      }
+    }
+    "main": {
+      "helloWorld": {
+        "greet": "hello {{ name }}"
+      }
+    }
+  }
+}
+
+//define a custom component
+const helloWorld = props => (
+  <div>
+    <h2>{ props.langs.title }</h2>
+    <p>{ props.langs.greet({ name: 'charlie'})}</p>
+  </div>
+)
+
+//access multiple component translation
+const HelloWorld = WithTranslation(helloWorld, ['main.helloWorld', 'share,UI'])
+
+//will output hello world and hello charlie
+const App = () => (
+  <InternationalProvider data={languagesData} locale="en-US">
+    <HelloWorld />
+  </InternationalProvider>
+);
+```
