@@ -1,6 +1,6 @@
 {
   "name": "react-hola",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "simple translation react component",
   "main": "lib/index.js",
   "scripts": {
