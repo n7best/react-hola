@@ -23,6 +23,8 @@
     "url": "https://github.com/n7best/react-hola/issues"
   },
   "dependencies": {
+    "es6-promise": "^4.1.1",
+    "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1"
   },
