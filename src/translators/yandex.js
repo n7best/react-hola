@@ -28,7 +28,7 @@ class YandexTranslator {
       if (data.code === 200) {
         callback(data.text);
       } else {
-        console.log(`Error:${data.message}`);
+        callback(`Error:${data.message}`);
       }
     });
   }
